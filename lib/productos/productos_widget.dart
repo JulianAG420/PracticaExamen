@@ -275,7 +275,7 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                   child: FFButtonWidget(
                     onPressed: () async {
                       await launchURL(
-                          'https://api.whatsapp.com/send?phone=numero&text=%27texto%27${_model.textController1.text}${_model.textController2.text}');
+                          'https://api.whatsapp.com/send?phone=${_model.textController1.text}&text=${_model.textController2.text}');
                     },
                     text: 'Whatsaap',
                     options: FFButtonOptions(
@@ -301,7 +301,7 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                   alignment: AlignmentDirectional(-0.95, -2.8),
                   child: InkWell(
                     onTap: () async {
-                      context.pushNamed('Categorias');
+                      context.pop();
                     },
                     child: Icon(
                       Icons.arrow_back,
